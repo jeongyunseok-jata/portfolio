@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import './globals.css'
-import bg1 from '../public/bg1.png'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,10 +13,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='bg relative'>
-          <div className='pt-44 text-center text-5xl font-bold'>Fast&Cheap web Development Services</div>
-          <Link href='https://pf.kakao.com/_qcQxcK' 
-            className='center-w mt-6 px-10 py-3 rounded-lg text-xl bg-blue-600 text-white'>Get Started</Link>
+        <div className='bg'>
+          <div className='bg-text-center'>
+            <div className='text-center text-5xl font-bold text-white'>Fast&Cheap web Development Services</div>
+            <Link href='https://pf.kakao.com/_qcQxcK' 
+              className='center-w mt-6 px-10 py-3 text-xl bg-blue-900 text-white'>Get Started</Link>
+          </div>
+          <div className='relative'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className='w-9 h-9 svg-white animate-bounce'><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg></div>
         </div>
         {children}
         <footer class="footerContainer">
