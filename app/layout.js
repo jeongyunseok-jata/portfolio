@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import './globals.css'
+import bg1 from '../public/bg1.png'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -11,7 +13,40 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className='bg relative'>
+          <div className='pt-44 text-center text-5xl font-bold'>Fast&Cheap web Development Services</div>
+          <Link href='https://pf.kakao.com/_qcQxcK' 
+            className='center-w mt-6 px-10 py-3 rounded-lg text-xl bg-blue-600 text-white'>Get Started</Link>
+        </div>
+        {children}
+        <footer class="footerContainer">
+          <div class="maxWidth">
+              <div class="title">
+                  <h1>DevOn</h1>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <h2>company</h2>
+                      <ul>
+                          <li>Deveoper : 정윤석</li>
+                      </ul>
+                  </div>
+                  <div class="col">
+                      <h2>contact</h2>
+                      <ul>
+                          <li><a href="https://discord.gg/3eQF6Kvypv">디스코드</a></li>
+                          <li><a href="https://pf.kakao.com/_qcQxcK">카카오톡</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="copyright">
+                  <h1>© 2022 DevOn. All rights reserved.</h1>
+              </div>
+          </div>
+      </footer>
+      </body>
     </html>
   )
 }
+

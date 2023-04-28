@@ -2,26 +2,180 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: 'NatoSans';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../public/fonts/NotoSansKR-Thin.otf');
+}
+@font-face {
+    font-family: 'NatoSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../public/fonts/NotoSansKR-Light.otf');
+}
+@font-face {
+    font-family: 'NatoSans';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../public/fonts/NotoSansKR-Regular.otf');
+}
+@font-face {
+    font-family: 'NatoSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../public/fonts/NotoSansKR-Medium.otf');
+}
+@font-face {
+    font-family: 'NatoSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../public/fonts/NotoSansKR-Bold.otf');
+}
+@font-face {
+    font-family: 'NatoSans';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../public/fonts/NotoSansKR-Black.otf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+    --headerColor: #fff;
+    --boldBlack: #343f52;
+    --lightBlack: #60697b;
+    --pointBlue: #2656a6;
+    --pointLightBlue: #3883FF;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    font-family: 'NatoSans';
+}
+.bg {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-color: rgba(255, 255, 255, .26);
+}
+.bg::before {
+    background-image: url('../public/bg1.png');
+    background-size: cover;
+    filter: blur(2rem);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: inherit;
+    height: 470px;
+    content: "";
+}
+.center-w {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.center-h {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.pf-1 {
+    background-image: url('../public/card1.jpg');
+    background-size: cover;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end;
+}
+.pf-ct {
+    margin: 16px auto;
+    padding: 1.25em;
+    width: 90%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .17);
+    backdrop-filter: blur(15px);
+    transition: all .5s;
+}
+#Projcard:hover .pf-ct {
+    width: 95%;
+    padding: 1.4em;
+}
+.footerContainer {
+    padding: 60px 0 0 0;
+    margin-top: 100px;
+    width: 100%;
+    background-color: #353535;
+    transition: all .3s;
+    box-sizing: border-box;
+}
+.footerContainer .title h1 {
+    font-size: 2em;
+    color: var(--headerColor);
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.footerContainer .row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.footerContainer .col {
+   width: 25%;
+}
+.footerContainer h2 {
+	font-size: 1.1em;
+	color: var(--headerColor);
+	text-transform: capitalize;
+	margin-bottom: 29px;
+	font-weight: bold;
+	position: relative;
+}
+.footerContainer h2::before {
+	content: '';
+	position: absolute;
+	bottom: -13px;
+	background-color: var(--pointLightBlue);
+	height: 2px;
+	width: 50px;
+}
+.footerContainer ul li:not(:last-child) {
+	margin-bottom: 4px;
+}
+.footerContainer ul li {
+	font-size: 16px;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+	color: var(--headerColor);
+	display: block;
+	
+}
+.footerContainer ul li a {
+    color: var(--headerColor);
+    text-decoration: none;
+}
+.footerContainer ul li:hover {
+	color: var(--headerColor);
+	margin-left: -7px;
+}
+.footerContainer ul li a:hover {
+	color: var(--headerColor);
+	margin-left: -7px;
+}
+.footerContainer .copyright {
+    color: #d7d7d7;
+    font-size: 1em;
+    padding: 32px 0;
+}
+  
+@media (max-width: 1446px) {
+    .footerContainer {
+        padding-left: 35px;
+    }
+}
+@media(max-width: 780px){
+    .footerContainer .col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 600px) {
+    .footerContainer .col {
+        width: 100%;
+    }
 }
