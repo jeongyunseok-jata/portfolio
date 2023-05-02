@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
 
         {children}
 
-        <footer className='w-full py-7 bg-gray-100'>
+        <footer className='w-full py-7 bg-gray-200'>
           <div className='text-base font-medium text-center text-zinc-500'>Copyright© 2023.DevOn.All rights reserved.</div>
         </footer>        
       </body>

@@ -16,6 +16,14 @@ export default function Home() {
   return (
     <>
       <section className='min-h-screen flex flex-col justify-center items-center'>
+        <div className='absolute bg-blue-100 w-[700px] h-[700px] flex justify-center items-center rounded-full header-animation'>
+          <div className='absolute bg-blue-200 w-[600px] h-[600px] flex justify-center items-center rounded-full header-animation'>
+            <div className='absolute bg-blue-300/75 w-[490px] h-[490px] rounded-full header-animation'></div>
+          </div>
+        </div>
+        <nav className='w-full h-16 absolute top-0 z-0'>
+          <div className='container mx-auto pt-4 text-2xl font-bold pl-2'>DevOn</div>
+        </nav>
         <div className='max-w-md'>
           <Lottie
             loop
@@ -23,23 +31,23 @@ export default function Home() {
             play
           />
         </div>
-        <div className='text-center mt-12'>
-          <h1 className='text-4xl font-medium text-gray-600 mb-3'>
+        <div className='left-1/2 text-center z-0'>
+          <h1 className='text-4xl font-medium text-gray-700 mb-3'>
             Wellcome DevOn!
           </h1>
-          <p className='text-lg text-gray-500'>
+          <p className='text-lg text-gray-600'>
             This site introduces Jung Yun-seok's portfolio&services.
           </p>
-          <Image
+        </div>
+        <Image
             src={arrow}
             className='w-8 h-8 absolute left-1/2 tr-arrow bottom-4'
           />
-        </div>
       </section>
 
       <section className='flex items-center justify-center mt-10 mb-10 ci-on'>
         <div className='container mx-auto'>
-          <h1 className='mx-3 mb-5 text-2xl font-bold'>Projects</h1>
+          <h1 className='mx-3 mb-5 text-3xl font-bold'>Projects</h1>
           <div className='flex flex-wrap w-full justify-center'>
             <ProjCard
               imgName={proj1}

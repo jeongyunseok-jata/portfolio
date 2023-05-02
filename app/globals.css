@@ -41,6 +41,22 @@
 body {
     font-family: 'NatoSans';
 }
+.header-animation {
+    animation-name: header-animation;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes header-animation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.06);
+    }
+}
 .tr-arrow {
     transform: translateX(-50%);
     animation-name: bounce;
